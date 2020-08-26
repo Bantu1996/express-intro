@@ -135,9 +135,6 @@ it ("should return a class name of 'danger' if critical level is reached", funct
     assert.equal("danger", settingsBills.totalClassName());
 
 });
-
-
-
 });
 
 //       it ("should be able to add up totals of", function () {
