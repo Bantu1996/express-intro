@@ -135,30 +135,10 @@ it ("should return a class name of 'danger' if critical level is reached", funct
     assert.equal("danger", settingsBills.totalClassName());
 
 });
+
+
+
 });
-// it ("should stop the  Total from increasing when the critical level has been reached", function() {
-
-//     let settingsBills = SettingsBill();
-//         settingsBills.setSettings({
-//             callCost: 2.42,
-//             smsCost: 1.45,
-//             warningLevel: 3,
-//             criticalLevel: 4.84
-            
-//         })
-//         settingsBills.recordAction('call');
-//         settingsBills.recordAction('call');
-//         settingsBills.recordAction('sms');
-
-//     assert.equal("danger", settingsBills.totalClassName());
-
-//     assert.equal(4.84, settingsBills.totals().grandTotal);
-
-// });
-
-
-
-
 
 //       it ("should be able to add up totals of", function () {
 
