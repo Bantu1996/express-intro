@@ -100,41 +100,41 @@ describe("The bill with settings function", function () {
 
     });
 
-    it ("should return a class name of 'warning' if warning level is reached", function() {
+    it("should return a class name of 'warning' if warning level is reached", function () {
 
-    let settingsBills = SettingsBill();
+        let settingsBills = SettingsBill();
         settingsBills.setSettings({
             callCost: 2.42,
             smsCost: 1.45,
             warningLevel: 3,
             criticalLevel: 4
-            
+
         })
         settingsBills.recordAction('call');
         settingsBills.recordAction('sms');
 
-    assert.equal("warning", settingsBills.totalClassName());
+        assert.equal("warning", settingsBills.totalClassName());
 
-});
+    });
 
 
-it ("should return a class name of 'danger' if critical level is reached", function() {
+    it("should return a class name of 'danger' if critical level is reached", function () {
 
-    let settingsBills = SettingsBill();
+        let settingsBills = SettingsBill();
         settingsBills.setSettings({
             callCost: 2.42,
             smsCost: 1.45,
             warningLevel: 3,
             criticalLevel: 4
-            
+
         })
         settingsBills.recordAction('call');
         settingsBills.recordAction('call');
         settingsBills.recordAction('sms');
 
-    assert.equal("danger", settingsBills.totalClassName());
+        assert.equal("danger", settingsBills.totalClassName());
 
-});
+    });
 });
 
 //       it ("should be able to add up totals of", function () {

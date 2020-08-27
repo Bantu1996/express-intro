@@ -26,21 +26,21 @@ module.exports = function SettingsBill() {
 
     function recordAction(action) {
         let cost = 0;
-        if(!hasReachedTheCriticalLevel()){
+        if (!hasReachedTheCriticalLevel()) {
             if (action === 'sms') {
                 cost = smsCost;
             }
             else if (action === 'call') {
                 cost = callCost;
             }
-    
+
             actionList.push({
                 type: action,
                 cost,
                 timestamp: new Date()
             });
         }
-       
+
     }
 
     function actions() {
@@ -62,17 +62,17 @@ module.exports = function SettingsBill() {
     }
 
 
-
+function grandTotal() {
+   return getTotal('sms') + getTotal('call')
+}
     function totals() {
-        let smsTotal = getTotal('sms')
-        let callTotal = getTotal('call')
-         var smsTotalFix =smsTotal.toFixed(2)
-         var callTotalFix =callTotal.toFixed(2)
-        let grandTotal = (smsTotal + callTotal).toFixed(2)
+        let smsTotal = getTotal('sms').toFixed(2)
+        let callTotal = getTotal('call').toFixed(2)
+    
         return {
-            smsTotalFix,
-            callTotalFix,
-            grandTotal
+            smsTotal,
+            callTotal,
+            grandTotal: grandTotal().toFixed(2)
         }
     }
 
@@ -114,7 +114,8 @@ module.exports = function SettingsBill() {
         totals,
         hasReachedTheWarningLevel,
         totalClassName,
-        hasReachedTheCriticalLevel
+        hasReachedTheCriticalLevel,
+        grandTotal
 
     };
 }
